@@ -33,15 +33,15 @@ carro_preto = pygame.image.load('carro_preto.png')
 timer = 0
 tempo_segundo = 0
 
-font = pygame.font.SysFont('arial black', 30) #Fonte e tamanho
-texto = font.render("Tempo: ", True, (255,255,255), (0,0,0)) # texto, cor de letra, cor da fundo
+font = pygame.font.SysFont('arial black', 30) 
+texto = font.render("Tempo: ", True, (255,255,255), (0,0,0)) 
 post_texto = texto.get_rect()
-post_texto.center = (68,60) #posição
+post_texto.center = (68,60) 
 
 '''difinições da janela'''
-janela = pygame.display.set_mode((1080, 720))#tamanho, pontos x e y
-pygame.display.set_caption("matematica-06-12") #titulo
-janela_aberta = True #tornando abertura real
+janela = pygame.display.set_mode((1080, 720))
+pygame.display.set_caption("matematica-06-12") 
+janela_aberta = True 
 
 while janela_aberta :
     pygame.time.delay(50)
@@ -72,9 +72,9 @@ while janela_aberta :
 
     '''respawn aleatorio, determinada entre limites'''
     if (pos_y <= -200) and (pos_y_a <= -200) and (pos_y_c <= -200):
-        pos_y = randint(800,2000)
-        pos_y_a = randint(800,2000)
-        pos_y_c = randint(800,2000)
+        pos_y = randint(800,1100) #azul
+        pos_y_a = randint(1400,2000)#branco
+        pos_y_c = randint(2300,3000)#preto
 
     '''tornando velocidade dos carros aleatorias'''
     pos_y -= velocidade_outros + randint(1,10)
@@ -82,12 +82,12 @@ while janela_aberta :
     pos_y_c -= velocidade_outros + randint(1,10)
 
     '''Jogando na tela'''
-    janela.blit(fundo,(0,0)) #background
+    janela.blit(fundo,(0,0)) 
     janela.blit(carro, (x,y)) #carro principal
     janela.blit(carro_azul, (pos_x, pos_y)) #carro azul
     janela.blit(carro_branco,(pos_x + 163, pos_y_a)) #carro branco
     janela.blit(carro_preto,(pos_x + 310, pos_y_c)) # carro preto
-    janela.blit(texto, post_texto) # Cronometro
+    janela.blit(texto, post_texto) 
 
     pygame.display.update()
 
