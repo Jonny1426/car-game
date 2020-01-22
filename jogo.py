@@ -22,7 +22,7 @@ velocidade_outros = 20
 
 #imagens
 fundo = pygame.image.load('pista.png')
-carro = pygame.image.load('carro_menor.png')
+carro = pygame.image.load('carro_principal.png')
 carro_azul = pygame.image.load('carro_azul.png')
 carro_branco = pygame.image.load('carro_branco.png')
 #xb = 493
